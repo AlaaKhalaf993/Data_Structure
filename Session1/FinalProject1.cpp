@@ -60,7 +60,6 @@ void searchCar(int Garage[], int n) {
     for (int i = 0; i < currentCars; i++) {
         if (Garage[i] == Plate) {
             cout << "Car found in the garage." << endl;
-            return 1;
         }
     }
     cout << "Car not found in the garage." << endl;
@@ -80,16 +79,18 @@ int main() {
     int *Garage = new int[Garage_Capacity];
 
     int choice;
-    cout << "Enter the task number you want to run (1-5): ";
+
     do{
-        cout << "Select the feature you want to run: \n"
+        cout << "\n"
+        << "Select the feature you want to run: \n"
         << "1. Park Car \n"
         << "2. Remove Car \n"
         << "3. Display Cars \n"
         << "4. Search Car \n"
         << "5. Show Statistics \n"
-        << "0. Exit \n";
+        << "0. Exit \n"
         << "Enter your choice: ";
+
         cin >> choice;
             if (choice == 1) {
                 parkCar(Garage, Garage_Capacity);

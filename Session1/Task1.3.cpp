@@ -2,6 +2,7 @@
 using namespace std;
 
 int max_grade(int Grades[], int Num_of_Students) {
+    cout << "Finding the maximum grade..." << endl;
     int max = Grades[0];
     for (int i = 1; i < Num_of_Students; i++) {
         if (Grades[i] > max) {

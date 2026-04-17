@@ -2,6 +2,7 @@
 using namespace std;
 
 int main() {
+    cout << "Enter the number of days: ";
     int Num_of_Days;
     cin >> Num_of_Days;
 

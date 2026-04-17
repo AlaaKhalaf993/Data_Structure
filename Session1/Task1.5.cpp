@@ -1,27 +1,23 @@
 #include <iostream>
 using namespace std;
 
-int addition(int a, int b, int result) {
-    result = a + b;
-    return result;
+int addition(int a, int b) {
+    return a + b;
 }
-int subtraction(int a, int b, int result) {
+int subtraction(int a, int b) {
     if (a >= b) {
-        result = a - b;
+        return a - b;
     } 
     else {
-        result = b - a;
+        return b - a;
     }
-    return result;
 }
-int multiplication(int a, int b, int result) {
-    result = a * b;
-    return result;
+int multiplication(int a, int b) {
+    return a * b;
 }
-int division(int a, int b, int result) {
+int division(int a, int b) {
     if (b != 0) {
-        result = a / b;
-        return result;
+        return a / b;
     } 
     else {
         cout << "Error: Division by zero is not allowed." << endl;
@@ -39,19 +35,19 @@ int main() {
     cout << "What is the opperation you want to perform? (Enter + for addition, - for subtraction, * for multiplication, / for division): ";
     char operation;
     cin >> operation;
-
+    
     int result;
     if (operation == '+') {
-        addition(item1, item2, result);
+        result = addition(item1, item2);
     } 
     else if (operation == '-') {
-        subtraction(item1, item2, result);
+        result = subtraction(item1, item2);
     } 
     else if (operation == '*') {
-        multiplication(item1, item2, result);
+        result = multiplication(item1, item2);
     } 
     else if (operation == '/') {
-        division(item1, item2, result);
+        result = division(item1, item2);
     }     
     else {
         cout << "Invalid operation." << endl;
