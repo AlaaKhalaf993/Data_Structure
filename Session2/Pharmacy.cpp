@@ -49,7 +49,7 @@ public:
     }
 
     void showInfo() {
-        cout << "Medicine Name: " << this->medicineName << endl;
+        cout << endl << "Medicine Name: " << this->medicineName << endl;
         cout << "Company Name: " << this->companyName << endl;
         cout << "Quantity: " << this->quantity << endl;
         cout << "Price per Unit: " << this->pricePerUnit << endl;
@@ -79,7 +79,7 @@ int main() {
 
 
     string medicineName2, companyName2;
-    cout << "Enter second medicine name: ";
+    cout << endl << "Enter second medicine name: ";
     cin >> medicineName2;
     cout << "Enter second company name: ";
     cin >> companyName2;
@@ -97,12 +97,12 @@ int main() {
     m2->setPricePerUnit(pricePerUnit2);
 
     m1->showInfo();
-    cout << " Price of First Medicine: " << m1->getTotalPrice() << endl;
+    cout << "Price of First Medicine: " << m1->getTotalPrice() << endl;
 
     m2->showInfo();
-    cout << " Price of Second Medicine: " << m2->getTotalPrice() << endl;
+    cout << "Price of Second Medicine: " << m2->getTotalPrice() << endl;
 
-    cout << "Combined Total Price: " <<( m2->getTotalPrice()+ m1->getTotalPrice() ) << endl;
+    cout << endl <<"Combined Total Price: " <<( m2->getTotalPrice()+ m1->getTotalPrice() ) << endl;
 
     return 0;   
 
