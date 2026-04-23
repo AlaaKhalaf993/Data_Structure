@@ -12,6 +12,13 @@ void parkCar(int Garage[], int n) {
     cout << "Enter the car's plate number: ";
     int Plate;
     cin >> Plate; 
+    
+    for (int i = 0; i < currentCars; i++) {
+        if (Garage[i] == Plate) {
+            cout << "Car with this plate number is already parked." << endl;
+            return;
+        }
+    }
 
     Garage[currentCars] = Plate;
     cout << "Car parked successfully." << endl;
