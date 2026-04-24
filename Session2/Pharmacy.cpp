@@ -4,15 +4,15 @@ using namespace std;
 class Medicine
 {
 private:
-    int quantity;
-    float pricePerUnit;
+    int quantity = 0;
+    float pricePerUnit = 0.0;
 public:
     string medicineName;
     string companyName;
 
     Medicine(string MN, string CN) {
-        this->medicineName = MN;
-        this->companyName = CN;
+        medicineName = MN;
+        companyName = CN;
     }
 
     void setQuantity(int q) {
@@ -21,12 +21,12 @@ public:
             return;
         }
         else {
-            this->quantity = q;
+            quantity = q;
         }
     }
 
     int getQuantity() {
-        return this->quantity;
+        return quantity;
     }
 
     void setPricePerUnit(float p) {
@@ -35,24 +35,24 @@ public:
             return;
         }
         else {
-            this->pricePerUnit = p;
+            pricePerUnit = p;
         }
     }
 
     float getPricePerUnit() {
-        return this->pricePerUnit;
+        return pricePerUnit;
     }
 
     float getTotalPrice() {
-        float totalPrice = this->quantity * this->pricePerUnit;
+        float totalPrice = quantity * pricePerUnit;
         return totalPrice;
     }
 
     void showInfo() {
-        cout << endl << "Medicine Name: " << this->medicineName << endl;
-        cout << "Company Name: " << this->companyName << endl;
-        cout << "Quantity: " << this->quantity << endl;
-        cout << "Price per Unit: " << this->pricePerUnit << endl;
+        cout << endl << "Medicine Name: " << medicineName << endl;
+        cout << "Company Name: " << companyName << endl;
+        cout << "Quantity: " << quantity << endl;
+        cout << "Price per Unit: " << pricePerUnit << endl;
     }
 
 };
@@ -104,6 +104,8 @@ int main() {
 
     cout << endl <<"Combined Total Price: " <<( m2->getTotalPrice()+ m1->getTotalPrice() ) << endl;
 
-    return 0;   
+    delete m1;
+    delete m2;
 
+    return 0;   
 }
