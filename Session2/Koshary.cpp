@@ -3,27 +3,32 @@ using namespace std;
 
 class Meal {
     private:
-    float price;
+    float price = 0.0;
 
     public:
     string mealName;
     char size;
 
     Meal(string MN, char S) {
-        this->mealName = MN;
-        this->size = S;
+        mealName = MN;
+        size = S;
     }
 
     void setPrice(float p) {
-        this->price = p;
+        if(p < 0) {
+            cout << "Invalid price." << endl;
+            return;
+        }else {
+            price = p;
+        }
     }
     float getPrice() {
-        return this->price;
+        return price;
     }
     void showInfo() {
-        cout << "Meal Name: " << this->mealName << endl;
-        cout << "Size: " << this->size << endl;
-        cout << "Price: " << this->price << endl;
+        cout << "Meal Name: " << mealName << endl;
+        cout << "Size: " << size << endl;
+        cout << "Price: " << price << endl;
     }
 
 };
@@ -56,6 +61,10 @@ int main() {
     cin >> price2;
     m2->setPrice(price2);
     m2->showInfo();
+
+    delete m1;
+    delete m2;
+
 
     return 0;
 }
