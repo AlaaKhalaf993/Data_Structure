@@ -35,11 +35,25 @@ public:
     }
     string top()
     {
-        return arr[stack_count-1];
+        if (isEmpty())
+        {
+           cout << "stack is empty" << endl;
+        }
+        else
+        {
+            return arr[stack_count-1];
+        }
     }
     void pop()
     {
-        stack_count--;
+        if (isEmpty())
+        {
+           cout << "stack is empty" << endl;
+        }
+        else
+        {
+            stack_count--;
+        }   
     }
 
     string search(string s)
@@ -54,7 +68,7 @@ public:
 
     void print()
     {
-        for(int i = stack_count; i > 0 ;i--)
+        for(int i = stack_count - 1; i >= 0; i--)
         {
             cout<<arr[i]<<endl;
         }
@@ -78,7 +92,7 @@ private:
         {
             t[i]=arr[i];
         }
-        delete arr;
+        delete []arr;
         arr=t;
         length= length*2;
     }
@@ -100,4 +114,7 @@ int main() {
     s1.print();
     s1.duplicateTop();
     s1.print();
+
+    delete s1;
+    return 0;
 }
