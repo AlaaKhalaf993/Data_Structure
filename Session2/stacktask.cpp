@@ -43,8 +43,25 @@ public:
         {
             return arr[stack_count-1];
         }
+        if (isEmpty())
+        {
+           cout << "stack is empty" << endl;
+        }
+        else
+        {
+            return arr[stack_count-1];
+        }
     }
     void pop()
+    {
+        if (isEmpty())
+        {
+           cout << "stack is empty" << endl;
+        }
+        else
+        {
+            stack_count--;
+        }   
     {
         if (isEmpty())
         {
@@ -69,6 +86,7 @@ public:
     void print()
     {
         for(int i = stack_count - 1; i >= 0; i--)
+        for(int i = stack_count - 1; i >= 0; i--)
         {
             cout<<arr[i]<<endl;
         }
@@ -92,6 +110,7 @@ private:
         {
             t[i]=arr[i];
         }
+        delete []arr;
         delete []arr;
         arr=t;
         length= length*2;

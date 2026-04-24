@@ -6,11 +6,15 @@ class Medicine
 private:
     int quantity = 0;
     float pricePerUnit = 0.0;
+    int quantity = 0;
+    float pricePerUnit = 0.0;
 public:
     string medicineName;
     string companyName;
 
     Medicine(string MN, string CN) {
+        medicineName = MN;
+        companyName = CN;
         medicineName = MN;
         companyName = CN;
     }
@@ -22,10 +26,12 @@ public:
         }
         else {
             quantity = q;
+            quantity = q;
         }
     }
 
     int getQuantity() {
+        return quantity;
         return quantity;
     }
 
@@ -36,19 +42,26 @@ public:
         }
         else {
             pricePerUnit = p;
+            pricePerUnit = p;
         }
     }
 
     float getPricePerUnit() {
         return pricePerUnit;
+        return pricePerUnit;
     }
 
     float getTotalPrice() {
+        float totalPrice = quantity * pricePerUnit;
         float totalPrice = quantity * pricePerUnit;
         return totalPrice;
     }
 
     void showInfo() {
+        cout << endl << "Medicine Name: " << medicineName << endl;
+        cout << "Company Name: " << companyName << endl;
+        cout << "Quantity: " << quantity << endl;
+        cout << "Price per Unit: " << pricePerUnit << endl;
         cout << endl << "Medicine Name: " << medicineName << endl;
         cout << "Company Name: " << companyName << endl;
         cout << "Quantity: " << quantity << endl;
@@ -103,6 +116,9 @@ int main() {
     cout << "Price of Second Medicine: " << m2->getTotalPrice() << endl;
 
     cout << endl <<"Combined Total Price: " <<( m2->getTotalPrice()+ m1->getTotalPrice() ) << endl;
+
+    delete m1;
+    delete m2;
 
     delete m1;
     delete m2;
